@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E9E71F52167BBAA00FAD00D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E71F42167BBAA00FAD00D /* AppDelegate.swift */; };
-		3E9E71F72167BBAA00FAD00D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E71F62167BBAA00FAD00D /* ViewController.swift */; };
+		3E9E71F72167BBAA00FAD00D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E71F62167BBAA00FAD00D /* RootViewController.swift */; };
 		3E9E71FA2167BBAA00FAD00D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E71F82167BBAA00FAD00D /* Main.storyboard */; };
 		3E9E71FC2167BBAB00FAD00D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E71FB2167BBAB00FAD00D /* Assets.xcassets */; };
 		3E9E71FF2167BBAB00FAD00D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9E71FD2167BBAB00FAD00D /* LaunchScreen.storyboard */; };
@@ -27,6 +27,7 @@
 		3E9E7245216A549B00FAD00D /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E7244216A549B00FAD00D /* WeatherViewController.swift */; };
 		3E9E7247216A56A500FAD00D /* CurrentWeahterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E7246216A56A500FAD00D /* CurrentWeahterViewController.swift */; };
 		3E9E7249216A585700FAD00D /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9E7248216A585700FAD00D /* Double.swift */; };
+		3EA38BCA216CF78A00485A9C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA38BC9216CF78A00485A9C /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,7 @@
 /* Begin PBXFileReference section */
 		3E9E71F12167BBAA00FAD00D /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9E71F42167BBAA00FAD00D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E9E71F62167BBAA00FAD00D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E9E71F62167BBAA00FAD00D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3E9E71F92167BBAA00FAD00D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E9E71FB2167BBAB00FAD00D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E9E71FE2167BBAB00FAD00D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		3E9E7244216A549B00FAD00D /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		3E9E7246216A56A500FAD00D /* CurrentWeahterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeahterViewController.swift; sourceTree = "<group>"; };
 		3E9E7248216A585700FAD00D /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		3EA38BC9216CF78A00485A9C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		3E9E71E82167BBAA00FAD00D = {
 			isa = PBXGroup;
 			children = (
+				3EA38BC9216CF78A00485A9C /* Default-568h@2x.png */,
 				3E9E71F32167BBAA00FAD00D /* Sky */,
 				3E9E72082167BBAB00FAD00D /* SkyTests */,
 				3E9E72132167BBAB00FAD00D /* SkyUITests */,
@@ -184,8 +187,8 @@
 		3E9E72252167BC0500FAD00D /* ViewControlers */ = {
 			isa = PBXGroup;
 			children = (
+				3EA38BCB216CF87500485A9C /* RootViewController */,
 				3E9E7243216A546F00FAD00D /* WeatherViewControllers */,
-				3E9E71F62167BBAA00FAD00D /* ViewController.swift */,
 			);
 			path = ViewControlers;
 			sourceTree = "<group>";
@@ -250,6 +253,14 @@
 				3E9E7246216A56A500FAD00D /* CurrentWeahterViewController.swift */,
 			);
 			path = WeatherViewControllers;
+			sourceTree = "<group>";
+		};
+		3EA38BCB216CF87500485A9C /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E9E71F62167BBAA00FAD00D /* RootViewController.swift */,
+			);
+			path = RootViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E9E71FF2167BBAB00FAD00D /* LaunchScreen.storyboard in Resources */,
+				3EA38BCA216CF78A00485A9C /* Default-568h@2x.png in Resources */,
 				3E9E71FC2167BBAB00FAD00D /* Assets.xcassets in Resources */,
 				3E9E71FA2167BBAA00FAD00D /* Main.storyboard in Resources */,
 			);
@@ -393,7 +405,7 @@
 				3E9E723A216A0B2500FAD00D /* URLSession.swift in Sources */,
 				3E9E722F2169F1C900FAD00D /* WeatherData.swift in Sources */,
 				3E9E72322169F75C00FAD00D /* WeahterDataManager.swift in Sources */,
-				3E9E71F72167BBAA00FAD00D /* ViewController.swift in Sources */,
+				3E9E71F72167BBAA00FAD00D /* RootViewController.swift in Sources */,
 				3E9E722C2169F0FF00FAD00D /* Location.swift in Sources */,
 				3E9E71F52167BBAA00FAD00D /* AppDelegate.swift in Sources */,
 				3E9E7245216A549B00FAD00D /* WeatherViewController.swift in Sources */,
@@ -574,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -591,6 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
