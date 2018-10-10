@@ -40,10 +40,11 @@ class RootViewController: UIViewController {
             if let error = error {
                 dump(error)
             } else if let city = placemarks?.first?.locality {
-                self.currentWeatherController.location = Location(
+                let location = Location(
                     name: city,
                     latitude: currentLocation.coordinate.latitude,
                     longitude: currentLocation.coordinate.longitude)
+                self.currentWeatherController.viewModel?.location = location
             }
         }
     }
@@ -60,7 +61,7 @@ class RootViewController: UIViewController {
             if let error = error {
                 dump(error)
             } else if let response = response {
-                self.currentWeatherController.now = response
+                self.currentWeatherController.viewModel?.weather = response
             }
         }
     }
@@ -75,6 +76,7 @@ class RootViewController: UIViewController {
             guard let destinnation = segue.destination as? CurrentWeahterViewController else {
                 fatalError("Invalid destinnation view control;er")
             }
+            destinnation.viewModel = CurrentWeatherViewModel()
             destinnation.delegate = self
             currentWeatherController = destinnation
         default:
@@ -85,10 +87,13 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActiveNotification()
+        
+        
     }
     
     private func setupActiveNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(RootViewController.applicationDidBecomeActive(notification:)), name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(RootViewController.applicationDidBecomeActive(notification:)), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     @objc func applicationDidBecomeActive(notification: Notification) {

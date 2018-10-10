@@ -25,15 +25,7 @@ class CurrentWeahterViewController: WeatherViewController {
     
     weak var delegate: CurrentWeatherViewControllerDelegate?
 
-    var now: WeatherData? {
-        didSet {
-            DispatchQueue.main.async {
-                self.updateView()
-            }
-        }
-    }
-    
-    var location: Location? {
+    var viewModel: CurrentWeatherViewModel? {
         didSet {
             DispatchQueue.main.async {
                 self.updateView()
@@ -52,36 +44,23 @@ class CurrentWeahterViewController: WeatherViewController {
     func updateView() {
         activityIndicatorView.startAnimating()
         
-        if let now = now, let location = location {
-            updateWeatherContainer(with: now, at: location)
+        if let vm = viewModel, vm.isUpdateReady {
+            updateWeatherContainer(with: vm)
         } else {
             loadingFailedLabel.isHidden = false
             loadingFailedLabel.text = "Connot load fetch weather/location data from the network."
         }
     }
     
-    func updateWeatherContainer(with data: WeatherData, at location: Location)  {
+    func updateWeatherContainer(with viewModel: CurrentWeatherViewModel)  {
         weatherContrainerView.isHidden = false
         
-        // Set location
-        locationLabel.text = location.name
-        
-        // Format and set temperature
-        temperatureLabel.text = String(format: "%.1f °C", data.currently.temperature.toCelcius())
-        
-        // Set weather icon
-        weatherIcon.image = weatherIcon(of: data.currently.icon)
-        
-        // Format and set humidity
-        humidityLabel.text = String(format: "%.1f", data.currently.humidity)
-        
-        // Set weather summary
-        summaryLabel.text = data.currently.summary
-        
-        // Format and set datetime
-        let fmt = DateFormatter()
-        fmt.dateFormat = "E, dd MMMM"
-        dateLabel.text = fmt.string(from: data.currently.time)
+        locationLabel.text = viewModel.city
+        temperatureLabel.text = viewModel.temperature
+        weatherIcon.image = viewModel.weatherIcon
+        humidityLabel.text = viewModel.humidity
+        summaryLabel.text = viewModel.summary
+        dateLabel.text = viewModel.date
     }
     
     override func viewDidLoad() {
