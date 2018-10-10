@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPl-4s-VPG">
                                 <rect key="frame" x="0.0" y="20" width="375" height="254"/>
                                 <connections>
-                                    <segue destination="AA8-W2-BCr" kind="embed" id="I6D-iu-KfN"/>
+                                    <segue destination="AA8-W2-BCr" kind="embed" identifier="SegueCurrentWeather" id="I6D-iu-KfN"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53g-QZ-hUb">
@@ -60,7 +60,7 @@
                                 <rect key="frame" x="177.5" y="117" width="20" height="20"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbT-B6-hV1">
-                                <rect key="frame" x="24" y="116.5" width="327" height="21"/>
+                                <rect key="frame" x="166.5" y="116.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,9 +68,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cfj-ju-NcY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="999-zj-OCw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="999-zj-OCw">
                                         <rect key="frame" x="123.5" y="63" width="128" height="128"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="Htj-3R-x4f"/>
                                             <constraint firstAttribute="width" constant="128" id="tev-MS-IIh"/>
@@ -157,17 +156,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rbT-B6-hV1" firstAttribute="leading" secondItem="LnJ-7d-knx" secondAttribute="leadingMargin" constant="8" id="8U5-CP-33w"/>
                             <constraint firstAttribute="trailing" secondItem="Cfj-ju-NcY" secondAttribute="trailing" id="An9-IZ-f9t"/>
                             <constraint firstItem="rbT-B6-hV1" firstAttribute="centerY" secondItem="LnJ-7d-knx" secondAttribute="centerY" id="Chm-oU-vuY"/>
                             <constraint firstAttribute="bottom" secondItem="Cfj-ju-NcY" secondAttribute="bottom" id="GJC-MS-pev"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rbT-B6-hV1" secondAttribute="trailing" constant="8" id="HNK-ri-hFs"/>
                             <constraint firstItem="eXL-Lp-JIG" firstAttribute="centerX" secondItem="LnJ-7d-knx" secondAttribute="centerX" id="J3z-GT-eRz"/>
                             <constraint firstItem="eXL-Lp-JIG" firstAttribute="centerY" secondItem="LnJ-7d-knx" secondAttribute="centerY" id="PIc-gJ-Pap"/>
                             <constraint firstItem="Cfj-ju-NcY" firstAttribute="leading" secondItem="LnJ-7d-knx" secondAttribute="leading" id="Z0D-Tm-Bv3"/>
                             <constraint firstItem="Cfj-ju-NcY" firstAttribute="top" secondItem="LnJ-7d-knx" secondAttribute="top" id="c6O-dz-ZF7"/>
                             <constraint firstItem="rbT-B6-hV1" firstAttribute="centerX" secondItem="LnJ-7d-knx" secondAttribute="centerX" id="hgp-pX-Mt3"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="LUS-wX-7lS"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="eXL-Lp-JIG" id="g4l-Ql-o3h"/>
@@ -193,6 +191,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="381"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nwM-lA-nEs"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhD-Xg-cP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -200,4 +199,7 @@
             <point key="canvasLocation" x="553" y="350"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clear-day" width="108" height="108"/>
+    </resources>
 </document>
