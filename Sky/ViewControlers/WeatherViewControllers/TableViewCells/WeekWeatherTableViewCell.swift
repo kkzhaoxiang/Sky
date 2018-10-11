@@ -16,11 +16,12 @@ class WeekWeatherTableViewCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var temperature: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
-    @IBOutlet weak var humid: UILabel!
+    @IBOutlet weak var humidity: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

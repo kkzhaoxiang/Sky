@@ -48,7 +48,7 @@ class CurrentWeahterViewController: WeatherViewController {
             updateWeatherContainer(with: vm)
         } else {
             loadingFailedLabel.isHidden = false
-            loadingFailedLabel.text = "Connot load fetch weather/location data from the network."
+            loadingFailedLabel.text = "Fetch weather/location failed."
         }
     }
     

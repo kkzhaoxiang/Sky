@@ -12,8 +12,11 @@ import CoreLocation
 class RootViewController: UIViewController {
     
     var currentWeatherController: CurrentWeahterViewController!
+    var weekWeatherController: WeekWeatherViewController!
     private let segueCurrentWeather = "SegueCurrentWeather"
-    
+    private let segueWeekWeather = "SegueWeekWeather"
+    private let segueSettings = "SegueSettings"
+
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         // 设置精度
@@ -62,8 +65,13 @@ class RootViewController: UIViewController {
                 dump(error)
             } else if let response = response {
                 self.currentWeatherController.viewModel?.weather = response
+                self.weekWeatherController.viewModel = WeekWeatherViewModel(weatherData: response.daily.data)
             }
         }
+    }
+    
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,12 +81,26 @@ class RootViewController: UIViewController {
         
         switch identifier {
         case segueCurrentWeather:
-            guard let destinnation = segue.destination as? CurrentWeahterViewController else {
-                fatalError("Invalid destinnation view control;er")
+            guard let destination = segue.destination as? CurrentWeahterViewController else {
+                fatalError("Invalid destination view controler")
             }
-            destinnation.viewModel = CurrentWeatherViewModel()
-            destinnation.delegate = self
-            currentWeatherController = destinnation
+            destination.viewModel = CurrentWeatherViewModel()
+            destination.delegate = self
+            currentWeatherController = destination
+        case segueWeekWeather:
+            guard let destination = segue.destination as? WeekWeatherViewController else {
+                fatalError("Invalid  detination view controller")
+            }
+            weekWeatherController = destination
+        case segueSettings:
+            guard let navigationController = segue.destination as? UINavigationController else {
+                fatalError("Invalid destination view controller!")
+            }
+            
+            guard let destination = navigationController.topViewController as? SettingsViewController else {
+                fatalError("Invalid destination view controller!")
+            }
+            destination.settingsDelegate = self
         default:
             break
         }
@@ -141,5 +163,21 @@ extension RootViewController: CurrentWeatherViewControllerDelegate {
     
     func settingButtonPressed(controller: CurrentWeahterViewController) {
         print("Open setting")
+        performSegue(withIdentifier: segueSettings, sender: self)
+    }
+}
+
+extension RootViewController: SettingsViewControllerDelegate {
+    private func reloadUI() {
+        currentWeatherController.updateView()
+        weekWeatherController.updateView()
+    }
+    
+    func controllerDidChangeTimeMode(controller: SettingsViewController) {
+        reloadUI()
+    }
+    
+    func controllerDidChangeTemperatureModel(controller: SettingsViewController) {
+        reloadUI()
     }
 }
