@@ -24,5 +24,10 @@ class SettingsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(with vm: SettingRepresentable) {
+        self.accessoryType = vm.accessory
+        self.label.text = vm.labelText
+    }
 
 }

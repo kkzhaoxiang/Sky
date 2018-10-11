@@ -29,5 +29,13 @@ class WeekWeatherTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(with vm: WeekWeatherDayRepresentable) {
+        week.text = vm.week
+        date.text = vm.date
+        temperature.text = vm.temperature
+        weatherIcon.image = vm.weatherIcon
+        humidity.text = vm.humidity
+    }
 
 }
