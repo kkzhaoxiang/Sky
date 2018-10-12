@@ -33,11 +33,7 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
     }
 
     // MARK: - Table view data source
@@ -72,27 +68,25 @@ class SettingsViewController: UITableViewController {
             fatalError("Unexpected section index")
         }
         
+        var vm: SettingRepresentable?
+        
         switch section {
         case .date:
-            cell.label.text = (indexPath.row == 0) ? "Fri, 01 December" : "F, 12/01"
-            let timeMode = UserDefaults.dateMode()
-            
-            if indexPath.row == timeMode.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+            guard let dateMode = DateMode(rawValue: indexPath.row) else {
+                fatalError("Invalid indexPath")
             }
+            
+            vm = SettingsDateViewModel(dateMode: dateMode)
         case .temperature:
-            cell.label.text = (indexPath.row == 0) ? "Celcius" : "Fahrenheit"
-            let temperatureNotation = UserDefaults.temperatureMode()
-            
-            if indexPath.row == temperatureNotation.rawValue {
-                cell.accessoryType = .checkmark
-            } else {
-                cell.accessoryType = .none
+            guard let temperatureMode = TemperatureMode(rawValue: indexPath.row) else {
+                fatalError("Invalid indexPath")
             }
+            vm = SettringsTemperatureViewModel(temperatureMode: temperatureMode)
         }
         
+        if let vm = vm {
+            cell.configure(with: vm)
+        }
         return cell
     }
     
