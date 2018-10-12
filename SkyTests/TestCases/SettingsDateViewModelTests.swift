@@ -42,21 +42,21 @@ class SettingsDateViewModelTests: XCTestCase {
         let dateMode: DateMode = .text
         
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)
-        let vm = SettingsDateViewModel(dateMode: dateMode)
+        let vm = SettingsDateViewModel(dateMode: .digit)
         XCTAssertEqual(vm.accessory, .none)
     }
     
     func test_digit_date_mode_selected() {
         let dateMode: DateMode = .digit
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)
-        let vm = SettingsDateViewModel(dateMode: dateMode)
+        let vm = SettingsDateViewModel(dateMode: .digit)
         XCTAssertEqual(vm.accessory, .checkmark)
     }
     
     func test_digit_date_mode_unselected() {
         let dateMode: DateMode = .digit
         UserDefaults.standard.set(dateMode.rawValue, forKey: UserDefaultsKeys.dateMode)
-        let vm = SettingsDateViewModel(dateMode: dateMode)
+        let vm = SettingsDateViewModel(dateMode: .text)
         XCTAssertEqual(vm.accessory, .none)
     }
     

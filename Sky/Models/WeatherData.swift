@@ -13,7 +13,6 @@ struct WeatherData: Codable {
     let latitude: Double
     let longitude: Double
     let currently: CurrentWeather
-    
     let daily: WeekWeatherData
     
     struct WeekWeatherData: Codable {

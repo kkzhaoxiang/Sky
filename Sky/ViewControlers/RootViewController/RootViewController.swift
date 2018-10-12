@@ -109,8 +109,6 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupActiveNotification()
-        
-        
     }
     
     private func setupActiveNotification() {

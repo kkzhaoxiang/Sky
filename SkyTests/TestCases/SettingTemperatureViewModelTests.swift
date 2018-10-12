@@ -41,7 +41,7 @@ class SettingTemperatureViewModelTests: XCTestCase {
     func test_temperature_celsius_unselected() {
         let temperatureMode: TemperatureMode = .celsius
         UserDefaults.standard.set(temperatureMode.rawValue, forKey: UserDefaultsKeys.temperatureMode)
-        let vm = SettringsTemperatureViewModel(temperatureMode: temperatureMode)
+        let vm = SettringsTemperatureViewModel(temperatureMode: .fahrenheit)
         
         XCTAssertEqual(vm.accessory, .none)
     }
@@ -57,7 +57,7 @@ class SettingTemperatureViewModelTests: XCTestCase {
     func test_temperature_fahrenheit_unselected() {
         let temperatureMode: TemperatureMode = .fahrenheit
         UserDefaults.standard.set(temperatureMode.rawValue, forKey: UserDefaultsKeys.temperatureMode)
-        let vm = SettringsTemperatureViewModel(temperatureMode: temperatureMode)
+        let vm = SettringsTemperatureViewModel(temperatureMode: .celsius)
         
         XCTAssertEqual(vm.accessory, .none)
     }

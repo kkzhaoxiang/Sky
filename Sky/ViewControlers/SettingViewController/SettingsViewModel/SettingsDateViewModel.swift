@@ -16,7 +16,7 @@ struct SettingsDateViewModel {
     }
     
     var accessory: UITableViewCell.AccessoryType {
-        if UserDefaults.dateMode() == .text {
+        if UserDefaults.dateMode() == dateMode {
             return .checkmark
         } else {
             return .none

@@ -120,8 +120,7 @@ class WeatherDataManagerTest: XCTestCase {
                 "icon" : "snow",
                 "time" : 1507180335,
                 "summary" : "Light Snow"
-            }
-
+            },
             "daily": {
                 "data": [
                     {
@@ -141,7 +140,7 @@ class WeatherDataManagerTest: XCTestCase {
 
         manager.weatherDataAt(
             latitude: 52,
-            longitude: 100) { (d, nil) in
+            longitude: 100) { (d, _) in
                 decoded = d
         }
         
