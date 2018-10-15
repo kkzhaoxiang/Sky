@@ -45,11 +45,58 @@
                     </view>
                     <connections>
                         <segue destination="V2U-QY-RvV" kind="presentation" identifier="SegueSettings" id="nOY-jr-tTt"/>
+                        <segue destination="RwU-AF-AWg" kind="presentation" identifier="SegueLocations" id="6Gv-dZ-FAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-95" y="-330"/>
+        </scene>
+        <!--Locations-->
+        <scene sceneID="gde-S2-kWz">
+            <objects>
+                <tableViewController id="6qQ-T7-b60" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="VTz-vL-RMO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="N2K-KX-wcc">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N2K-KX-wcc" id="bSW-GL-rBR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiq-4c-ulk">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kiq-4c-ulk" secondAttribute="trailing" id="5Ty-Q1-6hU"/>
+                                        <constraint firstItem="kiq-4c-ulk" firstAttribute="top" secondItem="bSW-GL-rBR" secondAttribute="topMargin" id="GIl-0Z-Bv0"/>
+                                        <constraint firstItem="kiq-4c-ulk" firstAttribute="leading" secondItem="bSW-GL-rBR" secondAttribute="leadingMargin" id="aMn-Sn-rkJ"/>
+                                        <constraint firstItem="kiq-4c-ulk" firstAttribute="bottom" secondItem="bSW-GL-rBR" secondAttribute="bottomMargin" id="of2-JH-bMW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6qQ-T7-b60" id="cnF-Df-pgX"/>
+                            <outlet property="delegate" destination="6qQ-T7-b60" id="SsT-Xo-kEQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locations" id="JZg-BK-Z4I">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="2oz-5d-QK8"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="jYs-k1-OOr"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ER0-n5-cN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844" y="-741.67916041979015"/>
         </scene>
         <!--Current Weahter View Controller-->
         <scene sceneID="a0h-fo-IHN">
@@ -184,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnD-iL-Yhw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="385"/>
+            <point key="canvasLocation" x="276" y="499"/>
         </scene>
         <!--Settings-->
         <scene sceneID="a7P-Ty-VP5">
@@ -237,7 +284,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0d-0O-U5Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pQI-ZO-Dkm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="-331"/>
+            <point key="canvasLocation" x="1844" y="5"/>
         </scene>
         <!--Week Weather View Controller-->
         <scene sceneID="WPO-WS-4jr">
@@ -366,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yhD-Xg-cP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="857"/>
+            <point key="canvasLocation" x="-412" y="556"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bW1-fa-u1Y">
@@ -384,12 +431,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjf-eT-dty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="-331"/>
+            <point key="canvasLocation" x="905" y="5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eZB-gI-gm9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RwU-AF-AWg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ydy-gq-o2V">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6qQ-T7-b60" kind="relationship" relationship="rootViewController" id="znU-c3-5oZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fDv-c8-DFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.79999999999995" y="-742.5787106446777"/>
         </scene>
     </scenes>
     <resources>
         <image name="LocationBtn" width="44" height="44"/>
         <image name="Setting" width="44" height="44"/>
-        <image name="clear-day" width="108" height="108"/>
+        <image name="clear-day" width="128" height="128"/>
     </resources>
 </document>

@@ -50,14 +50,14 @@ struct CurrentWeatherViewModel {
         
         switch UserDefaults.temperatureMode() {
         case .fahrenheit:
-            return String(format: "%.1f °C", value)
+            return String(format: "%.1f °F", value)
         case .celsius:
             return String(format: "%.1f °C", value.toCelcius())
         }
     }
     
     var humidity: String {
-        return String(format: "%.1f %%", weather.currently.humidity)
+        return String(format: "%.1f %%", weather.currently.humidity * 100)
     }
     
     var summary: String {
