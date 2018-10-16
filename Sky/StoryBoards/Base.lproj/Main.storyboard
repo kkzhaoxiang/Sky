@@ -55,13 +55,13 @@
         <!--Locations-->
         <scene sceneID="gde-S2-kWz">
             <objects>
-                <tableViewController id="6qQ-T7-b60" sceneMemberID="viewController">
+                <tableViewController id="6qQ-T7-b60" customClass="LocationsViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="VTz-vL-RMO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="N2K-KX-wcc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="N2K-KX-wcc" customClass="LocationTableViewCell" customModule="Sky" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N2K-KX-wcc" id="bSW-GL-rBR">
@@ -82,6 +82,9 @@
                                         <constraint firstItem="kiq-4c-ulk" firstAttribute="bottom" secondItem="bSW-GL-rBR" secondAttribute="bottomMargin" id="of2-JH-bMW"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="kiq-4c-ulk" id="Miw-lj-bYr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -90,13 +93,77 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Locations" id="JZg-BK-Z4I">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="2oz-5d-QK8"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="2oz-5d-QK8">
+                            <connections>
+                                <segue destination="LKb-Py-Gp7" kind="unwind" unwindAction="unwindToLocationsViewControllerWithSegue:" id="UGV-MJ-DTe"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="jYs-k1-OOr"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="LSa-Dh-9nb" kind="show" identifier="SegueAddLocationView" id="gkL-Uv-XNm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ER0-n5-cN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LKb-Py-Gp7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="-741.67916041979015"/>
+            <point key="canvasLocation" x="1844" y="-743"/>
+        </scene>
+        <!--Add a location-->
+        <scene sceneID="jba-7G-M2m">
+            <objects>
+                <tableViewController id="LSa-Dh-9nb" customClass="AddLocationViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FR4-cU-rM1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Qiw-Lw-2Ns">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4aj-CA-T5t" customClass="LocationTableViewCell" customModule="Sky" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4aj-CA-T5t" id="Glh-NG-sUK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myu-OP-eBs">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="myu-OP-eBs" firstAttribute="bottom" secondItem="Glh-NG-sUK" secondAttribute="bottomMargin" id="BP6-10-Ff2"/>
+                                        <constraint firstItem="myu-OP-eBs" firstAttribute="leading" secondItem="Glh-NG-sUK" secondAttribute="leadingMargin" id="Vdg-aJ-LWq"/>
+                                        <constraint firstItem="myu-OP-eBs" firstAttribute="top" secondItem="Glh-NG-sUK" secondAttribute="topMargin" id="YgO-eg-9pl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="myu-OP-eBs" secondAttribute="trailing" id="ZyF-Jq-Vsl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="label" destination="myu-OP-eBs" id="ONl-CA-0y1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="LSa-Dh-9nb" id="Fx8-q7-P3C"/>
+                            <outlet property="delegate" destination="LSa-Dh-9nb" id="sV7-WX-NQa"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add a location" id="lPh-0d-Hqa">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="vPS-fr-OXN"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="Qiw-Lw-2Ns" id="R5C-P5-uCV"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZQ2-jl-qcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2703" y="-743"/>
         </scene>
         <!--Current Weahter View Controller-->
         <scene sceneID="a0h-fo-IHN">

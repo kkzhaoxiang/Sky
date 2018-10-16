@@ -26,4 +26,14 @@ extension LocationsViewModel: LocationRepresentable {
         
         return "Unknow position"
     }
+    
+    var locationCity: String {
+        if let locationText = locationText {
+            return locationText
+        } else if let location = location {
+            return location.toLocationCity
+        }
+        
+        return "Unknow position"
+    }
 }

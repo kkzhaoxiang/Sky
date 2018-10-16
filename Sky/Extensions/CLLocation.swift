@@ -16,4 +16,25 @@ extension CLLocation {
         
         return "\(latitude), \(longitude)"
     }
+    
+    var toLocationCity: String {
+        let geo = CLGeocoder()
+        var name: String = ""
+        geo.reverseGeocodeLocation(self) { (placemarks, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            } else {
+                if let place = placemarks?.first {
+                    if let locacity = place.locality {
+                        name = locacity
+                    } else {
+                        name = "Unknow city"
+                    }
+                } else {
+                    name = "Unknow city"
+                }
+            }
+        }
+        return name
+    }
 }

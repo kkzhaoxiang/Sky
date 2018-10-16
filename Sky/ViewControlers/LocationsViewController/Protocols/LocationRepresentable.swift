@@ -10,4 +10,5 @@ import Foundation
 
 protocol LocationRepresentable {
     var labelText: String { get }
+    var locationCity: String { get }
 }
