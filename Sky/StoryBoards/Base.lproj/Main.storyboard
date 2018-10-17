@@ -95,14 +95,15 @@
                     <navigationItem key="navigationItem" title="Locations" id="JZg-BK-Z4I">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="2oz-5d-QK8">
                             <connections>
-                                <segue destination="LKb-Py-Gp7" kind="unwind" unwindAction="unwindToLocationsViewControllerWithSegue:" id="UGV-MJ-DTe"/>
+                                <segue destination="LSa-Dh-9nb" kind="show" id="uUz-f1-QKe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="jYs-k1-OOr"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="jYs-k1-OOr">
+                            <connections>
+                                <segue destination="LKb-Py-Gp7" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="Wa8-PI-ndK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="LSa-Dh-9nb" kind="show" identifier="SegueAddLocationView" id="gkL-Uv-XNm"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ER0-n5-cN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LKb-Py-Gp7" userLabel="Exit" sceneMemberID="exit"/>

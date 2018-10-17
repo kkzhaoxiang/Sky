@@ -15,6 +15,7 @@ protocol LocationsViewControllerDelegate: class {
 
 class LocationsViewController: UITableViewController {
 
+    private let segueAddLocationView = "SegueAddLocationView"
     var currentLocation: CLLocation?
     var favoutites = UserDefaults.loadLocations()
     weak var delegate: LocationsViewControllerDelegate?
@@ -28,8 +29,27 @@ class LocationsViewController: UITableViewController {
 
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+        case segueAddLocationView:
+            guard let destination = segue.destination as? AddLocationViewController else {
+                fatalError("Invaild view controller")
+            }
+            destination.delegate = self
+            
+        default:
+            break
+        }
+    }
 
-    @IBAction func unwindToLocationsViewController(segue: UIStoryboardSegue) {}
+    @IBAction func unwindToLocationsViewController(segue: UIStoryboardSegue) {
+        
+    }
     
     // MARK: - Table view data source
 
