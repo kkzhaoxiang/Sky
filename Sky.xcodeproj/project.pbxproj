@@ -54,6 +54,9 @@
 		3EEC0B4D216F134900EB17AB /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0B4C216F134900EB17AB /* SettingsTableViewCell.swift */; };
 		3EF605EC216E4EEB00740717 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF605EB216E4EEB00740717 /* ForecastData.swift */; };
 		3EF605EE216E506E00740717 /* WeekWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF605ED216E506E00740717 /* WeekWeatherViewModel.swift */; };
+		4093911575D97D99126AF4FE /* Pods_SkyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4763EC04128C496F9101541 /* Pods_SkyUITests.framework */; };
+		7836EB36A028641E7E4549EE /* Pods_Sky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5579B4A439BCA9E6CEAEE42 /* Pods_Sky.framework */; };
+		9243795BCA52C6E9C00697F1 /* Pods_SkyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C97474C98686CF23656D6A /* Pods_SkyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0889925A770A6BAB4248CDAF /* Pods-SkyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyUITests/Pods-SkyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		31C97474C98686CF23656D6A /* Pods_SkyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35DBE0EE6E925D02D0B8EA9C /* Pods-SkyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyTests/Pods-SkyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E9E71F12167BBAA00FAD00D /* Sky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9E71F42167BBAA00FAD00D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E9E71F62167BBAA00FAD00D /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,12 @@
 		3EEC0B4C216F134900EB17AB /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		3EF605EB216E4EEB00740717 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		3EF605ED216E506E00740717 /* WeekWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewModel.swift; sourceTree = "<group>"; };
+		652D806F961ECAF694BC235F /* Pods-Sky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sky/Pods-Sky.debug.xcconfig"; sourceTree = "<group>"; };
+		D4763EC04128C496F9101541 /* Pods_SkyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00C50459A9B184D0001D3DD /* Pods-SkyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyTests/Pods-SkyTests.release.xcconfig"; sourceTree = "<group>"; };
+		E5579B4A439BCA9E6CEAEE42 /* Pods_Sky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5021275881BEC6E9DD8A3A2 /* Pods-Sky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sky/Pods-Sky.release.xcconfig"; sourceTree = "<group>"; };
+		F780D684547BBE45DAB9C391 /* Pods-SkyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyUITests/Pods-SkyUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7836EB36A028641E7E4549EE /* Pods_Sky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9243795BCA52C6E9C00697F1 /* Pods_SkyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,12 +162,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4093911575D97D99126AF4FE /* Pods_SkyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0480101AD866C6BC446A482A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				652D806F961ECAF694BC235F /* Pods-Sky.debug.xcconfig */,
+				F5021275881BEC6E9DD8A3A2 /* Pods-Sky.release.xcconfig */,
+				35DBE0EE6E925D02D0B8EA9C /* Pods-SkyTests.debug.xcconfig */,
+				E00C50459A9B184D0001D3DD /* Pods-SkyTests.release.xcconfig */,
+				0889925A770A6BAB4248CDAF /* Pods-SkyUITests.debug.xcconfig */,
+				F780D684547BBE45DAB9C391 /* Pods-SkyUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		06087DC98FF677B743C59127 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5579B4A439BCA9E6CEAEE42 /* Pods_Sky.framework */,
+				31C97474C98686CF23656D6A /* Pods_SkyTests.framework */,
+				D4763EC04128C496F9101541 /* Pods_SkyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3E9E71E82167BBAA00FAD00D = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +200,8 @@
 				3E9E72082167BBAB00FAD00D /* SkyTests */,
 				3E9E72132167BBAB00FAD00D /* SkyUITests */,
 				3E9E71F22167BBAA00FAD00D /* Products */,
+				0480101AD866C6BC446A482A /* Pods */,
+				06087DC98FF677B743C59127 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -468,9 +508,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E9E72192167BBAB00FAD00D /* Build configuration list for PBXNativeTarget "Sky" */;
 			buildPhases = (
+				00E3A89559C369085E84EEC2 /* [CP] Check Pods Manifest.lock */,
 				3E9E71ED2167BBAA00FAD00D /* Sources */,
 				3E9E71EE2167BBAA00FAD00D /* Frameworks */,
 				3E9E71EF2167BBAA00FAD00D /* Resources */,
+				6462972D46FC4F0059550FC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,6 +527,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E9E721C2167BBAB00FAD00D /* Build configuration list for PBXNativeTarget "SkyTests" */;
 			buildPhases = (
+				4DBCEF5525E1E1733818EC63 /* [CP] Check Pods Manifest.lock */,
 				3E9E72012167BBAB00FAD00D /* Sources */,
 				3E9E72022167BBAB00FAD00D /* Frameworks */,
 				3E9E72032167BBAB00FAD00D /* Resources */,
@@ -503,6 +546,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E9E721F2167BBAB00FAD00D /* Build configuration list for PBXNativeTarget "SkyUITests" */;
 			buildPhases = (
+				327E9FAEBBFEF60C46932443 /* [CP] Check Pods Manifest.lock */,
 				3E9E720C2167BBAB00FAD00D /* Sources */,
 				3E9E720D2167BBAB00FAD00D /* Frameworks */,
 				3E9E720E2167BBAB00FAD00D /* Resources */,
@@ -590,6 +634,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00E3A89559C369085E84EEC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		327E9FAEBBFEF60C46932443 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DBCEF5525E1E1733818EC63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6462972D46FC4F0059550FC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sky/Pods-Sky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sky/Pods-Sky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E9E71ED2167BBAA00FAD00D /* Sources */ = {
@@ -808,16 +929,14 @@
 		};
 		3E9E721A2167BBAB00FAD00D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652D806F961ECAF694BC235F /* Pods-Sky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.Sky";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -828,16 +947,14 @@
 		};
 		3E9E721B2167BBAB00FAD00D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5021275881BEC6E9DD8A3A2 /* Pods-Sky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.Sky";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -848,6 +965,7 @@
 		};
 		3E9E721D2167BBAB00FAD00D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35DBE0EE6E925D02D0B8EA9C /* Pods-SkyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -856,11 +974,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyTests/SuppotingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -873,6 +987,7 @@
 		};
 		3E9E721E2167BBAB00FAD00D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E00C50459A9B184D0001D3DD /* Pods-SkyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -881,11 +996,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyTests/SuppotingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -897,6 +1008,7 @@
 		};
 		3E9E72202167BBAB00FAD00D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0889925A770A6BAB4248CDAF /* Pods-SkyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -904,11 +1016,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -922,6 +1030,7 @@
 		};
 		3E9E72212167BBAB00FAD00D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F780D684547BBE45DAB9C391 /* Pods-SkyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -929,11 +1038,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
