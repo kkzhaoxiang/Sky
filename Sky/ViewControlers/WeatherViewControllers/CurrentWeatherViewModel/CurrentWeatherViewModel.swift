@@ -9,41 +9,13 @@
 import UIKit
 
 struct CurrentWeatherViewModel {
-    var isLocationReady = false
-    var isWeatherReady = false
-    
-    var location: Location! {
-        didSet {
-            if location != nil {
-                self.isLocationReady = true
-            } else {
-                self.isLocationReady = false
-            }
-        }
-    }
-    
-    var weather: WeatherData! {
-        didSet {
-            if weather != nil {
-                self.isWeatherReady = true
-            } else {
-                self.isWeatherReady = false
-            }
-        }
-    }
-    
-    var isUpdateReady: Bool {
-        return isLocationReady && isWeatherReady
-    }
+
+    var weather: WeatherData
     
     var weatherIcon: UIImage {
         return UIImage.weatherIcon(of: weather.currently.icon)!
     }
-    
-    var city: String {
-        return location.name
-    }
-    
+
     var temperature: String {
         
         let value = weather.currently.temperature
@@ -69,5 +41,11 @@ struct CurrentWeatherViewModel {
         formatter.dateFormat = UserDefaults.dateMode().format
         
         return formatter.string(from: weather.currently.time)
+    }
+    
+    static let empty = CurrentWeatherViewModel(weather: WeatherData.empty)
+    
+    var isEmpty: Bool {
+        return self.weather == WeatherData.empty
     }
 }

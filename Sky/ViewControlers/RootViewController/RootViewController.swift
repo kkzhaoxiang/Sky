@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import RxSwift
 
 class RootViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class RootViewController: UIViewController {
     private let segueWeekWeather = "SegueWeekWeather"
     private let segueSettings = "SegueSettings"
     private let segueLocations = "SegueLocations"
+    
+    private var bag = DisposeBag()
 
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -48,7 +51,7 @@ class RootViewController: UIViewController {
                     name: city,
                     latitude: currentLocation.coordinate.latitude,
                     longitude: currentLocation.coordinate.longitude)
-                self.currentWeatherController.viewModel?.location = location
+                self.currentWeatherController.locationVM.accept(CurrentLocationViewModel(location: location))
             }
         }
     }
@@ -61,14 +64,11 @@ class RootViewController: UIViewController {
         let lat = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude
         
-        WeatherDataManager.shared.weatherDataAt(latitude: lat, longitude: lon) { (response, error) in
-            if let error = error {
-                dump(error)
-            } else if let response = response {
-                self.currentWeatherController.viewModel?.weather = response
-                self.weekWeatherController.viewModel = WeekWeatherViewModel(weatherData: response.daily.data)
-            }
-        }
+        WeatherDataManager.shared.weatherDataAt(latitude: lat, longitude: lon)
+            .subscribe(onNext: {
+                self.currentWeatherController.weatherVM.accept(CurrentWeatherViewModel(weather: $0))
+            })
+            .disposed(by: bag)
     }
     
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
@@ -85,7 +85,6 @@ class RootViewController: UIViewController {
             guard let destination = segue.destination as? CurrentWeahterViewController else {
                 fatalError("Invalid destination view controler")
             }
-            destination.viewModel = CurrentWeatherViewModel()
             destination.delegate = self
             currentWeatherController = destination
         case segueWeekWeather:

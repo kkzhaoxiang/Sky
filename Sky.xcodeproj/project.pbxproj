@@ -44,6 +44,7 @@
 		3EBDFE8121746AD5009367D3 /* CLLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBDFE8021746AD5009367D3 /* CLLocation.swift */; };
 		3EBDFEFC2175B962009367D3 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBDFEFB2175B962009367D3 /* AddLocationViewController.swift */; };
 		3EBDFF732177120E009367D3 /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBDFF722177120E009367D3 /* AddLocationViewModel.swift */; };
+		3EDBEBA02179C78500B9DDB8 /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDBEB9F2179C78500B9DDB8 /* CurrentLocationViewModel.swift */; };
 		3EEC0B3A216D9BF200EB17AB /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0B39216D9BF200EB17AB /* CurrentWeatherViewModel.swift */; };
 		3EEC0B3C216D9D8600EB17AB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0B3B216D9D8600EB17AB /* UIImage.swift */; };
 		3EEC0B40216DC5F800EB17AB /* CurrentWeatherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EEC0B3F216DC5F800EB17AB /* CurrentWeatherTest.swift */; };
@@ -123,6 +124,7 @@
 		3EBDFE8021746AD5009367D3 /* CLLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation.swift; sourceTree = "<group>"; };
 		3EBDFEFB2175B962009367D3 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		3EBDFF722177120E009367D3 /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
+		3EDBEB9F2179C78500B9DDB8 /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
 		3EEC0B39216D9BF200EB17AB /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 		3EEC0B3B216D9D8600EB17AB /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		3EEC0B3F216DC5F800EB17AB /* CurrentWeatherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherTest.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				3EEC0B39216D9BF200EB17AB /* CurrentWeatherViewModel.swift */,
 				3EF605ED216E506E00740717 /* WeekWeatherViewModel.swift */,
 				3EBC0D4F216F8CC200636555 /* WeekWeatherDayViewModel.swift */,
+				3EDBEB9F2179C78500B9DDB8 /* CurrentLocationViewModel.swift */,
 			);
 			path = CurrentWeatherViewModel;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				3EBC0D49216F85C600636555 /* SettingsDateViewModel.swift in Sources */,
 				3EBDFE7C217468AD009367D3 /* LocationRepresentable.swift in Sources */,
 				3E9E7240216A0C0800FAD00D /* URLSessionDataTask.swift in Sources */,
+				3EDBEBA02179C78500B9DDB8 /* CurrentLocationViewModel.swift in Sources */,
 				3EBDFEFC2175B962009367D3 /* AddLocationViewController.swift in Sources */,
 				3EBC0D50216F8CC200636555 /* WeekWeatherDayViewModel.swift in Sources */,
 				3EEC0B3C216D9D8600EB17AB /* UIImage.swift in Sources */,
@@ -936,7 +940,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.Sky";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -954,7 +961,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.Sky";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -974,7 +984,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyTests/SuppotingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -996,7 +1010,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyTests/SuppotingFiles/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1016,7 +1034,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1038,7 +1060,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TZL3UXPR8Q;
 				INFOPLIST_FILE = SkyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kk-zhaoxiang.SkyUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

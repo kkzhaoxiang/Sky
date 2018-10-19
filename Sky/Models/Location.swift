@@ -17,6 +17,11 @@ struct Location: Equatable {
         static let longitude = "longitude"
     }
     
+    static let empty = Location(
+        name: "",
+        latitude: 0,
+        longitude: 0)
+    
     var name: String
     var latitude: Double
     var longitude: Double

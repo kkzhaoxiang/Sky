@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol CurrentWeatherViewControllerDelegate: class {
     func locationButtonPressed(controller: CurrentWeahterViewController)
@@ -22,6 +24,10 @@ class CurrentWeahterViewController: WeatherViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    private var bag = DisposeBag()
+    var weatherVM: BehaviorRelay<CurrentWeatherViewModel> = BehaviorRelay(value: CurrentWeatherViewModel.empty)
+    var locationVM: BehaviorRelay<CurrentLocationViewModel> = BehaviorRelay(value: CurrentLocationViewModel.empty)
     
     weak var delegate: CurrentWeatherViewControllerDelegate?
 
@@ -44,28 +50,31 @@ class CurrentWeahterViewController: WeatherViewController {
     func updateView() {
         activityIndicatorView.startAnimating()
         
-        if let vm = viewModel, vm.isUpdateReady {
-            updateWeatherContainer(with: vm)
-        } else {
-            loadingFailedLabel.isHidden = false
-            loadingFailedLabel.text = "Fetch weather/location failed."
-        }
-    }
-    
-    func updateWeatherContainer(with viewModel: CurrentWeatherViewModel)  {
-        weatherContrainerView.isHidden = false
-        
-        locationLabel.text = viewModel.city
-        temperatureLabel.text = viewModel.temperature
-        weatherIcon.image = viewModel.weatherIcon
-        humidityLabel.text = viewModel.humidity
-        summaryLabel.text = viewModel.summary
-        dateLabel.text = viewModel.date
+        weatherVM.accept(weatherVM.value)
+        locationVM.accept(locationVM.value)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Observable.combineLatest(locationVM, weatherVM) {
+                return ($0, $1)
+            }
+            .filter {
+                let (locaton, weather) = $0
+                return !(locaton.isEmpty) && !(weather.isEmpty)
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] in
+                let (location, weather) = $0
+                self.weatherContrainerView.isHidden = false
+                self.locationLabel.text = location.city
+                self.temperatureLabel.text = weather.temperature
+                self.weatherIcon.image = weather.weatherIcon
+                self.humidityLabel.text = weather.humidity
+                self.summaryLabel.text = weather.summary
+                self.dateLabel.text = weather.date
+            }).disposed(by: bag)
+        
     }
 }
 
