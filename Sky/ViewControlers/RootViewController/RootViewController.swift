@@ -64,10 +64,22 @@ class RootViewController: UIViewController {
         let lat = currentLocation.coordinate.latitude
         let lon = currentLocation.coordinate.longitude
         
-        WeatherDataManager.shared.weatherDataAt(latitude: lat, longitude: lon)
+        let weather = WeatherDataManager.shared.weatherDataAt(latitude: lat, longitude: lon)
+            .share(replay: 1, scope: .whileConnected)
+            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: {
+//                self.currentWeatherController.weatherVM.accept(CurrentWeatherViewModel(weather: $0))
+//                self.weekWeatherController.viewModel = WeekWeatherViewModel(weatherData: $0.daily.data)
+//            })
+//            .disposed(by: bag)
+        
+        weather.map { CurrentWeatherViewModel(weather: $0) }
+            .bind(to: self.currentWeatherController.weatherVM)
+            .disposed(by: bag)
+        weather.map { WeekWeatherViewModel(weatherData: $0.daily.data) }
             .subscribe(onNext: {
-                self.currentWeatherController.weatherVM.accept(CurrentWeatherViewModel(weather: $0))
-            })
+            self.weekWeatherController.viewModel = $0
+        })
             .disposed(by: bag)
     }
     
